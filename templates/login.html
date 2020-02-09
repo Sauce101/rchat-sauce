@@ -1,16 +1,15 @@
 {% from 'form_helper.html' import displayField %}
-
 {% extends "prelogin-layout.html" %}
 
-{% block title %}Registration {% endblock %}
+{% block title %}Login {% endblock %}
 
 {% block content %}
-    <h1>Get started</h1>
+    <h1>Login now!</h1>
+    <p>Enter your username/password to start Rchat</p>
 
-    <form action="{{ url_for('index') }}" method="POST">
+    <form action="{{ url_for('login') }}" method="POST">
         {{ displayField(form.username, 'Username', autocomplete="off", autofocus=true) }}
         {{ displayField(form.password, 'Password') }}
-        {{ displayField(form.confirm_pswd, 'Retype Password') }}
 
         <div>
             {{ form.submit_button }}
